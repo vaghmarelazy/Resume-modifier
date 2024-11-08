@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "Resume Modifier",
+    "version": "1.0",
+    "description": "Optimize your resume for specific job descriptions and increase your chances of selection.",
+    "permissions": ["activeTab", "scripting", "storage"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icons/icon16.png",
+        "32": "icons/icon32.png",
+        "128": "icons/icon128.png"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "*://www.linkedin.com/jobs/*",
+          "*://www.indeed.com/viewjob*"
+        ],
+        "js": ["content.js"]
+      }
+    ],
+    "host_permissions": [
+      "*://www.linkedin.com/*",
+      "*://www.indeed.com/*"
+    ]
+  }
+  
